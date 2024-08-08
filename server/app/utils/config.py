@@ -3,13 +3,14 @@ import sqlite3
 from datetime import datetime, timedelta, timezone
 from typing import Optional
 
+import jwt
 from dotenv import load_dotenv
-from jose import jwt
 from passlib.context import CryptContext
 
+# loads up .env file
 load_dotenv()
 
-
+# set the location of the sqlite database
 DATABASE_URL = "app/sql_app.db"
 
 # use bcrypt to hash and manage password
@@ -20,11 +21,10 @@ pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
 # openssl rand -hex 32
 JWT_SECRET_KEY = os.getenv("JWT_SECRET_KEY")
 ALGORITHM = "HS256"
-ACCESS_TOKEN_EXPIRE_MINUTES = 30
-REFRESH_TOKEN_EXPIRE_MINUTES = 60 * 24 * 7
+ACCESS_TOKEN_EXPIRE_MINUTES = 60
 
 
-# open a database connection
+# function to open a database connection
 def get_db():
     conn = sqlite3.connect(DATABASE_URL)
     conn.row_factory = sqlite3.Row  # To get dictionary-like row objects

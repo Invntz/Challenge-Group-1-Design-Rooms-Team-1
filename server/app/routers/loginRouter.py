@@ -26,8 +26,8 @@ async def login_for_access_token(form_data: OAuth2PasswordRequestForm = Depends(
     except Exception as e:
         print(e)
         raise HTTPException(
-            status_code=status.HTTP_400_BAD_REQUEST,
-            detail="Incorrect email or password",
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            detail="An error occurred while processing your request",
         )
     finally:
         conn.close()
