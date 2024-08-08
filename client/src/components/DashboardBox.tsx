@@ -1,3 +1,5 @@
+//  Created by Erikas Ramanauskas
+
 import React from 'react';
 
 type DashboardBoxProps = {

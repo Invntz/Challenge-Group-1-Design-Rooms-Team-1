@@ -1,8 +1,9 @@
+// Created by Erikas Ramanauskas
+
 import React, { useState } from 'react';
 import SideSlidingPanel from '../../components/SideSlidingPanel';
 import DashboardBox from '../../components/DashboardBox';
 
-// Updated data array with 16 boxes
 const dashboardBoxesData = [
   { id: 1, title: 'Box 1', content: 'This is box 1' },
   { id: 2, title: 'Box 2', content: 'This is box 2' },
