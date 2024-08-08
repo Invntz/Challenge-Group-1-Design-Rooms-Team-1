@@ -2,7 +2,7 @@ from fastapi import APIRouter, Depends, HTTPException, status
 from fastapi.security import OAuth2PasswordRequestForm
 
 from app.schemas.loginSchema import Login, LoginBase
-from app.utils.config import get_db, verify_password
+from app.utils.config import create_access_token, get_db, verify_password
 
 router = APIRouter()
 
@@ -40,7 +40,3 @@ async def login_for_access_token(form_data: OAuth2PasswordRequestForm = Depends(
         "success": True,
         "access_token": access_token,
     }
-
-    conn = get_db()
-    cursor = conn.cursor()
-    return {"success": True, "message": "Sign was successful"}
