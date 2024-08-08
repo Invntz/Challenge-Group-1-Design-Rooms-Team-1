@@ -1,5 +1,7 @@
 from pydantic import BaseModel
 
+# this isn't needed? due to how fastapi authenticates users?
+
 
 # this model is used to validate and parse incoming request data for a login
 class LoginBase(BaseModel):

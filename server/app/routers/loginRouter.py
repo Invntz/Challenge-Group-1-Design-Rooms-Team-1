@@ -7,6 +7,7 @@ from app.utils.config import create_access_token, get_db, verify_password
 router = APIRouter()
 
 
+# login function. broken at the moment
 @router.post("/")
 async def login_for_access_token(form_data: OAuth2PasswordRequestForm = Depends()):
     try:
