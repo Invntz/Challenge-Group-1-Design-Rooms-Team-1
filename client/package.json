@@ -14,14 +14,11 @@
     "url": "https://tailadmin.com"
   },
   "dependencies": {
-<<<<<<< HEAD
     "@fortawesome/free-solid-svg-icons": "^6.6.0",
     "@fortawesome/react-fontawesome": "^0.2.2",
-=======
     "@hookform/resolvers": "^3.9.0",
     "@radix-ui/react-label": "^2.1.0",
     "@radix-ui/react-slot": "^1.1.0",
->>>>>>> faf8967dcc0e3ca160c4ad7db803386badafd820
     "apexcharts": "^3.41.0",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",

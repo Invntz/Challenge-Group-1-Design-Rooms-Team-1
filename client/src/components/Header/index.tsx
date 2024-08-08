@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 // import DropdownNotification from './DropdownNotification';
 import DropdownUser from './DropdownUser';
 import LogoIcon from '../../images/logo/Invntz Black logo.png';
-// import DarkModeSwitcher from './DarkModeSwitcher';
+import DarkModeSwitcher from './DarkModeSwitcher';
 
 const Header = (props: {
   sidebarOpen: string | boolean | undefined;
