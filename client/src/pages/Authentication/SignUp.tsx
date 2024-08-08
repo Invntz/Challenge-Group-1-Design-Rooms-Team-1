@@ -1,8 +1,7 @@
+//modify by Min-Xuan
+
 import React from 'react';
 import Breadcrumb from '../../components/Breadcrumbs/Breadcrumb';
-// import { Link } from 'react-router-dom';
-// import LogoDark from '../../images/logo/logo-dark.svg';
-// import Logo from '../../images/logo/logo.svg';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
