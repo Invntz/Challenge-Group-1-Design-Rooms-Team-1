@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-
+from app.routers.signUpRouter import router as signupRouter
 from app.routers.loginRouter import router as login_router
 
 app = FastAPI()
@@ -16,3 +16,5 @@ app.add_middleware(
 
 # Register the router
 app.include_router(login_router, prefix="/api")
+
+app.include_router(signupRouter, prefix="/api/signup")
