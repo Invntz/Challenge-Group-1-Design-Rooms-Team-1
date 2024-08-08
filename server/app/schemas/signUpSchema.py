@@ -1,12 +1,14 @@
 from pydantic import BaseModel
 
 
-class TodoBase(BaseModel):
-    title: str
-    description: str | None = None
+class SignupBase(BaseModel):
+    email: str
+    password: str
+    firstname: str
+    surname: str
 
 
-class TodoResponse(TodoBase):
+class Signup(SignupBase):
     id: int
 
     class Config:
