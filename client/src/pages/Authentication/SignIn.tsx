@@ -1,3 +1,5 @@
+// Modified by Minhazul Karim
+
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Breadcrumb from '../../components/Breadcrumbs/Breadcrumb';
@@ -37,12 +39,12 @@ const SignIn: React.FC = () => {
     console.log(values);
   }
   return (
-    <>
-      <Breadcrumb pageName="Sign In" />
+    <div className="mt-5 h-screen min-h-screen grid place-items-center">
+      {/* <Breadcrumb pageName="Sign In" /> */}
 
-      <div className="rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark">
+      <div className="w-[75vw] max-w-2xl  mx-auto rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark">
         <div className="flex flex-wrap items-center">
-          <div className="w-full border-stroke dark:border-strokedark xl:w-1/2 xl:border-l-2">
+          <div className="w-full border-stroke dark:border-strokedark max-w-2xl mx-auto xl:border-l-2">
             <div className="w-full p-4 sm:p-12.5 xl:p-17.5">
               <h2 className="mb-9 text-center text-2xl font-bold text-black dark:text-white sm:text-title-xl2">
                 Sign In to Invntz
@@ -88,7 +90,7 @@ const SignIn: React.FC = () => {
                 </form>
               </Form>
 
-              <div className="flex gap-4 my-4 mx-auto w-fit">
+              <div className="flex gap-4 my-4 mx-auto w-fit flex-wrap justify-center">
                 <svg
                   width="120"
                   height="45"
@@ -146,7 +148,7 @@ const SignIn: React.FC = () => {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
