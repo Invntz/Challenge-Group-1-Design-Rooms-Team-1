@@ -46,6 +46,7 @@ http://127.0.0.1:8000/docs
 
 http://127.0.0.1:8000/api/news
 http://127.0.0.1:8000/api/feed
+http://127.0.0.1:8000/api/team
 
 ##### Tools and technologies used:
 
