@@ -10,6 +10,8 @@ import SignUp from './pages/Authentication/SignUp';
 
 
 import ECommerce from './pages/Dashboard/Dashboard';
+import HomePage from './pages/Home/home';
+
 
 import FormLayout from './pages/Form/FormLayout';
 import Profile from './pages/Profile';
@@ -38,7 +40,7 @@ function App() {
   return (
     <>
 
-    
+
       <Routes>
         {/* Public Routes - No Layout */}
         <Route
@@ -47,6 +49,16 @@ function App() {
             <>
               <PageTitle title="Signin | TailAdmin - Tailwind CSS Admin Dashboard Template" />
               <SignIn />
+            </>
+          }
+        />
+
+        <Route
+          path="/homepage"
+          element={
+            <>
+              <PageTitle title="Signin | TailAdmin - Tailwind CSS Admin Dashboard Template" />
+              <HomePage />
             </>
           }
         />
@@ -76,7 +88,7 @@ function App() {
             element={
               <>
                 <PageTitle title="Calendar | TailAdmin - Tailwind CSS Admin Dashboard Template" />
-             
+
               </>
             }
           />
@@ -94,7 +106,7 @@ function App() {
             element={
               <>
                 <PageTitle title="Form Elements | TailAdmin - Tailwind CSS Admin Dashboard Template" />
-              
+
               </>
             }
           />
@@ -130,7 +142,7 @@ function App() {
             element={
               <>
                 <PageTitle title="Basic Chart | TailAdmin - Tailwind CSS Admin Dashboard Template" />
-                
+
               </>
             }
           />
