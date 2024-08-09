@@ -1,4 +1,5 @@
-//Cara and Konstantinos
+//Min-Xuan, Cara and Konstantinos
+
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Logo from '../../images/logo/InvntzLogo.png';
