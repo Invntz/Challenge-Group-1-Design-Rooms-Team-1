@@ -51,6 +51,10 @@ module.exports = {
         success: '#219653',
         danger: '#D34053',
         warning: '#FFA70B',
+        'primary-light': '#1C2434',
+        'primary-dark': '#FFFFFF',
+        'primary-dark-hover': '#3C50E0',
+        'primary-light-hover': '#3C50E0',
       },
       fontSize: {
         'title-xxl': ['44px', '55px'],

@@ -51,7 +51,7 @@ const SignIn: React.FC = () => {
     // Do something with the form values.
     // ✅ This will be type-safe and validated.
     console.log(values);
-    navigate('/');
+    navigate('/dashboard');
   }
   return (
     <div className="rounded-sm min-h-screen bg-white shadow-default dark:bg-boxdark">

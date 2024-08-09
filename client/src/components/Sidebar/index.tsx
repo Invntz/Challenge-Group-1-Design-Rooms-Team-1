@@ -1,11 +1,11 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
 import SidebarLinkGroup from './SidebarLinkGroup';
-import Logo from '../../images/logo/logo.svg';
+import Logo from '../../images/logo/InvntzLogo.png';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-import { faHome, faBeer, faComments, faBars, faPlus, faTable, faCog, faChartBar, faTachometerAlt, faChartPie, faCloud } from '@fortawesome/free-solid-svg-icons';
+import { faHome, faBeer, faComments, faBars, faPlus, faTable, faCog, faChartBar, faTachometerAlt, faChartPie, faCloud, faShoppingCart, faStore } from '@fortawesome/free-solid-svg-icons';
 
 interface SidebarProps {
   sidebarOpen: boolean;
@@ -21,7 +21,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
 
   const storedSidebarExpanded = localStorage.getItem('sidebar-expanded');
   const [sidebarExpanded, setSidebarExpanded] = useState(
-    storedSidebarExpanded === null ? false : storedSidebarExpanded === 'true'
+    storedSidebarExpanded === null ? false : storedSidebarExpanded === 'true',
   );
 
   // close on click outside
@@ -62,9 +62,9 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
   return (
     <aside
       ref={sidebar}
-      className={`absolute left-0 top-0 z-9999 flex h-screen w-20 flex-col overflow-y-hidden bg-black duration-300 ease-linear dark:bg-boxdark lg:static lg:translate-x-0 ${sidebarOpen ? 'translate-x-0' : '-translate-x-full'}`}
+      className={`absolute left-0 top-0 z-9999 flex h-screen w-20 flex-col overflow-y-hidden bg-blue-950 duration-300 ease-linear dark:bg-boxdark lg:static lg:translate-x-0 ${sidebarOpen ? 'translate-x-0' : '-translate-x-full'}`}
     >
-      <div className="flex items-center justify-between gap-2 px-6 py-5.5 lg:py-6.5">
+      <div className="flex items-center justify-between gap-2 p-2 lg:py-6.5">
         <NavLink to="/">
           <img src={Logo} alt="Logo" />
         </NavLink>
@@ -84,44 +84,31 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
         <nav className="mt-5 py-4">
           <div>
             <ul className="mb-6 flex flex-col gap-1.5">
-              {/* <SidebarLinkGroup
-              activeCondition={pathname === '/' || pathname.includes('dashboard')}
-            >
-              {(handleClick, open) => (
-                <React.Fragment>
-                  <NavLink
-                    to="/dashboard"
-                    className={`mb-5 group relative flex items-center gap-2.5 rounded-sm px-4 py-2 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4 ${(pathname === '/' || pathname.includes('dashboard')) && 'bg-graydark dark:bg-meta-4'}`}
-                    onClick={(e) => {
-                      e.preventDefault();
-                      sidebarExpanded ? handleClick() : setSidebarExpanded(true);
-                    }}
-                  >
-                    <FontAwesomeIcon icon={faHome} className="text-current fa-2x" />
-
-                  </NavLink>
-                </React.Fragment>
-              )}
-            </SidebarLinkGroup> */}
+          
 
               <li>
                 <NavLink
                   to="/dashboard"
-                  className={`mb-5 group relative flex flex-col items-center gap-2.5 rounded-sm py-2 px-4 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4 ${pathname.includes('calendar') && 'bg-graydark dark:bg-meta-4'}`}
+                  className={`mb-5 group relative flex flex-col items-center gap-2.5 rounded-sm py-2 px-4 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4 ${
+                    pathname.includes('calendar') &&
+                    'bg-graydark dark:bg-meta-4'
+                  }`}
                 >
-                  <FontAwesomeIcon icon={faHome} className="text-current fa-2x" />
+                  <FontAwesomeIcon icon={faHome} className="fa-2x" />
                   <span className="text-sm mt-1">Dashboard</span>  {/* Added this line */}
                 </NavLink>
               </li>
 
-
               <li>
                 <NavLink
                   to="/home"
-                  className={`mb-5 group relative flex flex-col items-center gap-2.5 rounded-sm py-2 px-4 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4 ${pathname.includes('calendar') && 'bg-graydark dark:bg-meta-4'}`}
+                  className={`mb-5 group relative flex flex-col items-center gap-2.5 rounded-sm py-2 px-4 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4 ${
+                    pathname.includes('calendar') &&
+                    'bg-graydark dark:bg-meta-4'
+                  }`}
                 >
-                  <FontAwesomeIcon icon={faHome} className="text-current fa-2x" />
-                  <span className="text-sm mt-1">Home</span>  {/* Added this line */}
+                  <FontAwesomeIcon icon={faStore} className="text-current fa-2x" />
+                  <span className="text-sm mt-1">Market</span>  {/* Added this line */}
                 </NavLink>
               </li>
               
@@ -136,20 +123,26 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                 </NavLink>
               </li>
 
+           
+
               <li>
                 <NavLink
-                  to="/Statics"
-                  className={`mb-5 group relative flex flex-col items-center gap-2.5 rounded-sm py-2 px-4 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4 ${pathname.includes('calendar') && 'bg-graydark dark:bg-meta-4'}`}
+                  to="/upload"
+                  className={`mb-5 group relative flex flex-col items-center gap-2.5 rounded-sm py-2 px-4 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4 ${
+                    pathname.includes('calendar') &&
+                    'bg-graydark dark:bg-meta-4'
+                  }`}
                 >
-                  <FontAwesomeIcon icon={faCloud} className="text-current fa-2x" />
-                  <span className="text-sm mt-1">Upload</span>  {/* Added this line */}
+                  <FontAwesomeIcon
+                    icon={faCloud}
+                    className="text-current fa-2x"
+                  />
+                  <span className="text-sm mt-1">Upload</span>{' '}
+                  {/* Added this line */}
                 </NavLink>
               </li>
-
             </ul>
           </div>
-
-
         </nav>
       </div>
     </aside>

@@ -32,7 +32,7 @@ const LatestNewsItem: React.FC<LatestNewsItemProps> = ({
             className="w-10 h-10 object-cover rounded-full border border-gray-300 mr-3"
           />
         </a>
-        <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
+        <h3 className="text-lg font-semibold text-gray-900 dark:text-white ml-2">
           {title}
         </h3>
       </div>
