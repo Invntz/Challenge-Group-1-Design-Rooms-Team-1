@@ -1,3 +1,5 @@
+// Created by Erikas Ramanauskas
+
 import React from 'react';
 
 type DashboardBoxProps = {
@@ -18,9 +20,9 @@ const DashboardBox: React.FC<DashboardBoxProps> = ({
         backgroundImage: `url(${backgroundImage})`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
-        height: '200px', // Ensure sufficient height
-        width: '100%', // Ensure full width of grid cell
-        minWidth: '200px', // Ensure minimum width
+        height: '200px',
+        width: '100%',
+        minWidth: '200px',
       }}
     >
       {/* Title always visible */}
