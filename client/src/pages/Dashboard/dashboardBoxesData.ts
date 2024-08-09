@@ -1,4 +1,4 @@
-// Created by erikas ramanauskas
+// Created by Erikas ramanauskas
 
 // Controls dashbord boxes data
 
@@ -13,80 +13,57 @@ interface DashboardBoxData {
   title: string;
   content: string;
   backgroundImage: string;
+  link: string;
 }
 
 const dashboardBoxesData: DashboardBoxData[] = [
   {
     id: 1,
-    title: 'Box 1',
-    content: 'This is box 1',
+    title: "Women's Clothing",
+    content:
+      'Discover the latest trends in women’s fashion, from casual wear to evening dresses.',
     backgroundImage: image1,
+    link: '/calendar',
   },
   {
     id: 2,
-    title: 'Box 2',
-    content: 'This is box 2',
+    title: "Men's Clothing",
+    content:
+      'Explore a wide range of styles in men’s fashion, including suits, casual, and sportswear.',
     backgroundImage: image2,
+    link: '/',
   },
   {
     id: 3,
-    title: 'Box 3',
-    content: 'This is box 3',
+    title: 'Accessories',
+    content:
+      'Elevate your outfit with our collection of accessories, from jewelry to handbags.',
     backgroundImage: image3,
+    link: '/',
   },
   {
     id: 4,
-    title: 'Box 4',
-    content: 'This is box 4',
+    title: 'Makeup & Beauty',
+    content:
+      'Find top beauty products and makeup essentials for a flawless look.',
     backgroundImage: image4,
+    link: '/',
   },
   {
     id: 5,
-    title: 'Box 5',
-    content: 'This is box 5',
+    title: 'Shoes',
+    content:
+      'Step up your style with our diverse selection of shoes for every occasion.',
     backgroundImage: image5,
+    link: '/',
   },
   {
     id: 6,
-    title: 'Box 6',
-    content: 'This is box 6',
+    title: 'Kids Clothes',
+    content:
+      'Shop the latest in kids’ fashion, from everyday essentials to special occasion outfits.',
     backgroundImage: image1,
-  },
-  {
-    id: 7,
-    title: 'Box 7',
-    content: 'This is box 7',
-    backgroundImage: image2,
-  },
-  {
-    id: 8,
-    title: 'Box 8',
-    content: 'This is box 8',
-    backgroundImage: image3,
-  },
-  {
-    id: 9,
-    title: 'Box 9',
-    content: 'This is box 9',
-    backgroundImage: image4,
-  },
-  {
-    id: 10,
-    title: 'Box 10',
-    content: 'This is box 10',
-    backgroundImage: image5,
-  },
-  {
-    id: 11,
-    title: 'Box 11',
-    content: 'This is box 11',
-    backgroundImage: image4,
-  },
-  {
-    id: 12,
-    title: 'Box 12',
-    content: 'This is box 12',
-    backgroundImage: image5,
+    link: '/',
   },
 ];
 
