@@ -5,7 +5,6 @@ import Logo from '../../images/logo/InvntzLogo.png';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-<<<<<<< HEAD
 import {
   faHome,
   faBeer,
@@ -18,10 +17,9 @@ import {
   faTachometerAlt,
   faChartPie,
   faCloud,
+  faShoppingCart,
+  faStore,
 } from '@fortawesome/free-solid-svg-icons';
-=======
-import { faHome, faBeer, faComments, faBars, faPlus, faTable, faCog, faChartBar, faTachometerAlt, faChartPie, faCloud, faShoppingCart, faStore } from '@fortawesome/free-solid-svg-icons';
->>>>>>> 4300c83a0c108e8335c236edeb895e69a28faad7
 
 interface SidebarProps {
   sidebarOpen: boolean;
@@ -78,7 +76,9 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
   return (
     <aside
       ref={sidebar}
-      className={`absolute left-0 top-0 z-9999 flex h-screen w-20 flex-col overflow-y-hidden bg-blue-950 duration-300 ease-linear dark:bg-boxdark lg:static lg:translate-x-0 ${sidebarOpen ? 'translate-x-0' : '-translate-x-full'}`}
+      className={`absolute left-0 top-0 z-9999 flex h-screen w-20 flex-col overflow-y-hidden bg-blue-950 duration-300 ease-linear dark:bg-boxdark lg:static lg:translate-x-0 ${
+        sidebarOpen ? 'translate-x-0' : '-translate-x-full'
+      }`}
     >
       <div className="flex items-center justify-between gap-2 p-2 lg:py-6.5">
         <NavLink to="/">
@@ -100,8 +100,6 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
         <nav className="mt-5 py-4">
           <div>
             <ul className="mb-6 flex flex-col gap-1.5">
-          
-
               <li>
                 <NavLink
                   to="/dashboard"
@@ -111,7 +109,8 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                   }`}
                 >
                   <FontAwesomeIcon icon={faHome} className="fa-2x" />
-                  <span className="text-sm mt-1">Dashboard</span>  {/* Added this line */}
+                  <span className="text-sm mt-1">Dashboard</span>{' '}
+                  {/* Added this line */}
                 </NavLink>
               </li>
 
@@ -123,26 +122,39 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                     'bg-graydark dark:bg-meta-4'
                   }`}
                 >
-                  <FontAwesomeIcon icon={faStore} className="text-current fa-2x" />
-                  <span className="text-sm mt-1">Market</span>  {/* Added this line */}
+                  <FontAwesomeIcon
+                    icon={faStore}
+                    className="text-current fa-2x"
+                  />
+                  <span className="text-sm mt-1">Market</span>{' '}
+                  {/* Added this line */}
                 </NavLink>
               </li>
-              
-            
+
               <li>
                 <NavLink
                   to="/Statics"
-                  className={`mb-5 group relative flex flex-col items-center gap-2.5 rounded-sm py-2 px-4 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4 ${pathname.includes('calendar') && 'bg-graydark dark:bg-meta-4'}`}
+                  className={`mb-5 group relative flex flex-col items-center gap-2.5 rounded-sm py-2 px-4 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4 ${
+                    pathname.includes('calendar') &&
+                    'bg-graydark dark:bg-meta-4'
+                  }`}
                 >
-                  <FontAwesomeIcon icon={faChartPie} className="text-current fa-2x" />
-                  <span className="text-sm mt-1">Statics</span>  {/* Added this line */}
+                  <FontAwesomeIcon
+                    icon={faChartPie}
+                    className="text-current fa-2x"
+                  />
+                  <span className="text-sm mt-1">Statics</span>{' '}
+                  {/* Added this line */}
                 </NavLink>
               </li>
 
               <li>
                 <NavLink
                   to="/upload"
-                  className={`mb-5 group relative flex flex-col items-center gap-2.5 rounded-sm py-2 px-4 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4 ${pathname.includes('calendar') && 'bg-graydark dark:bg-meta-4'}`}
+                  className={`mb-5 group relative flex flex-col items-center gap-2.5 rounded-sm py-2 px-4 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4 ${
+                    pathname.includes('calendar') &&
+                    'bg-graydark dark:bg-meta-4'
+                  }`}
                 >
                   <FontAwesomeIcon
                     icon={faChartPie}
