@@ -2,6 +2,8 @@
 
 We have created a Python backend using the FastAPI library with Sqlite as the database for this challenge. Sqlite is just for the prototype stage and would have to be replaced in the future with an ORM package like SQLAlchemy which can use MySQL or PostgreSQL. I have chosen not to use SQLAlchemy as despite it being capable of using Sqlite, we're unfamiliar with the ORM method of querying.
 
+Readme created by Tony Hoong
+
 <hr>
 
 #### Install:
@@ -27,7 +29,7 @@ pip install -r requirements.txt
 Once that is done, you can run the server with this command:
 
 ```
-uvicorn app.main:app --reload
+uvicorn app.main:app
 
 ```
 
@@ -39,6 +41,12 @@ http://127.0.0.1:8000/docs
 ```
 
 <hr>
+
+##### Prototype routes
+
+http://127.0.0.1:8000/api/news
+http://127.0.0.1:8000/api/feed
+http://127.0.0.1:8000/api/team
 
 ##### Tools and technologies used:
 

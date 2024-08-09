@@ -10,6 +10,8 @@ import SignUp from './pages/Authentication/SignUp';
 
 
 import ECommerce from './pages/Dashboard/Dashboard';
+import HomePage from './pages/Home/home';
+import Home from './components/Pages/home';
 
 import FormLayout from './pages/Form/FormLayout';
 import Profile from './pages/Profile';
@@ -18,6 +20,9 @@ import Tables from './pages/Tables';
 import Alerts from './pages/UiElements/Alerts';
 import Buttons from './pages/UiElements/Buttons';
 import DefaultLayout from './layout/DefaultLayout';
+// import Home from './pages/Home/home';
+import StatisticsPage from './components/Pages/statics';
+import Upload from './components/Pages/upload';
 
 function App() {
   const [loading, setLoading] = useState<boolean>(true);
@@ -37,14 +42,26 @@ function App() {
 
   return (
     <>
+
+
       <Routes>
         {/* Public Routes - No Layout */}
         <Route
           path="/auth/signin"
           element={
             <>
-              <PageTitle title="Signin | TailAdmin - Tailwind CSS Admin Dashboard Template" />
+              <PageTitle title="Signin   " />
               <SignIn />
+            </>
+          }
+        />
+
+        <Route
+          path="/homepage"
+          element={
+            <>
+              <PageTitle title="Signin   " />
+              <HomePage />
             </>
           }
         />
@@ -52,47 +69,78 @@ function App() {
           path="/auth/signup"
           element={
             <>
-              <PageTitle title="Signup | TailAdmin - Tailwind CSS Admin Dashboard Template" />
+              <PageTitle title="Signup   " />
               <SignUp />
+            </>
+          }
+        />
+
+        <Route
+          path="/"
+          element={
+            <>
+              <PageTitle title="Signup   " />
+              <SignIn />
             </>
           }
         />
 
         {/* Routes with Default Layout */}
         <Route element={<DefaultLayout />}>
-          <Route
+          {/* <Route
+          path="/"
             index
             element={
               <>
-                <PageTitle title="eCommerce Dashboard | TailAdmin - Tailwind CSS Admin Dashboard Template" />
+                <PageTitle title="Invetz" />
+                <ECommerce />
+              </>
+            }
+          /> */}
+          <Route
+            path="/dashboard"
+            index
+            element={
+              <>
+                <PageTitle title="Invetz" />
                 <ECommerce />
               </>
             }
           />
+          
           <Route
-            path="/calendar"
+            path="/home"
             element={
               <>
-                <PageTitle title="Calendar | TailAdmin - Tailwind CSS Admin Dashboard Template" />
-             
+                <PageTitle title="Home" />
+                <Home />
               </>
             }
           />
           <Route
-            path="/profile"
+            path="/Statics"
             element={
               <>
-                <PageTitle title="Profile | TailAdmin - Tailwind CSS Admin Dashboard Template" />
-                <Profile />
+                <PageTitle title="Statics   " />
+                <StatisticsPage />
               </>
             }
           />
+           <Route
+          path="/upload"
+          element={
+            <>
+              <PageTitle title="Signup   " />
+              <Upload />
+            </>
+          }
+        />
           <Route
             path="/forms/form-elements"
             element={
               <>
-                <PageTitle title="Form Elements | TailAdmin - Tailwind CSS Admin Dashboard Template" />
-              
+                <PageTitle title="Form Elements   " />
+
               </>
             }
           />
@@ -100,7 +148,7 @@ function App() {
             path="/forms/form-layout"
             element={
               <>
-                <PageTitle title="Form Layout | TailAdmin - Tailwind CSS Admin Dashboard Template" />
+                <PageTitle title="Form Layout   " />
                 <FormLayout />
               </>
             }
@@ -109,7 +157,7 @@ function App() {
             path="/tables"
             element={
               <>
-                <PageTitle title="Tables | TailAdmin - Tailwind CSS Admin Dashboard Template" />
+                <PageTitle title="Tables   " />
                 <Tables />
               </>
             }
@@ -118,7 +166,7 @@ function App() {
             path="/settings"
             element={
               <>
-                <PageTitle title="Settings | TailAdmin - Tailwind CSS Admin Dashboard Template" />
+                <PageTitle title="Settings   " />
                 <Settings />
               </>
             }
@@ -127,8 +175,8 @@ function App() {
             path="/chart"
             element={
               <>
-                <PageTitle title="Basic Chart | TailAdmin - Tailwind CSS Admin Dashboard Template" />
-                
+                <PageTitle title="Basic Chart   " />
+
               </>
             }
           />
@@ -136,7 +184,7 @@ function App() {
             path="/ui/alerts"
             element={
               <>
-                <PageTitle title="Alerts | TailAdmin - Tailwind CSS Admin Dashboard Template" />
+                <PageTitle title="Alerts   " />
                 <Alerts />
               </>
             }
@@ -145,7 +193,7 @@ function App() {
             path="/ui/buttons"
             element={
               <>
-                <PageTitle title="Buttons | TailAdmin - Tailwind CSS Admin Dashboard Template" />
+                <PageTitle title="Buttons   " />
                 <Buttons />
               </>
             }
