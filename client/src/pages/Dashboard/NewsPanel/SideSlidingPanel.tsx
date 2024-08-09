@@ -1,4 +1,5 @@
 // Created by Erikas Ramanauskas
+
 import React, { useState } from 'react';
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 import LatestNewsItem from './LatestNewsItem';
@@ -6,7 +7,7 @@ import latestNewsData from './latestNewsData';
 
 type SideSlidingPanelProps = {
   navBarHeight: number;
-  onToggle: (isOpen: boolean) => void; // Callback to notify when panel is toggled
+  onToggle: (isOpen: boolean) => void;
 };
 
 const SideSlidingPanel: React.FC<SideSlidingPanelProps> = ({
@@ -18,7 +19,7 @@ const SideSlidingPanel: React.FC<SideSlidingPanelProps> = ({
   const togglePanel = () => {
     const newIsOpen = !isOpen;
     setIsOpen(newIsOpen);
-    onToggle(newIsOpen); // Notify the parent about the panel's state
+    onToggle(newIsOpen);
   };
 
   return (
@@ -29,37 +30,37 @@ const SideSlidingPanel: React.FC<SideSlidingPanelProps> = ({
         height: `calc(100vh - ${navBarHeight}px)`,
       }}
     >
-      {/* Side panel */}
       <div
-        className={`bg-white dark:bg-gray-800 shadow-lg h-full transition-transform duration-300 ease-in-out transform ${
+        className={`bg-white dark:bg-boxdark-2 dark:text-bodydark  shadow-lg h-full transition-transform duration-300 ease-in-out transform ${
           isOpen ? 'translate-x-0' : 'translate-x-full'
         }`}
         style={{
-          width: isOpen ? '300px' : '0px', // Adjust width as needed
-          overflow: 'hidden', // Hide default scrollbar
+          width: isOpen ? '300px' : '0px',
+          overflow: 'hidden',
         }}
       >
         <div
           className="p-4 text-black dark:text-white"
           style={{
-            height: '100%', // Ensure the content area fills the panel
-            overflowY: 'auto', // Enable vertical scrolling
-            paddingRight: '8px', // Optional: prevents content from hiding behind the scrollbar
+            height: '100%',
+            overflowY: 'auto',
+            paddingRight: '8px',
           }}
         >
-          <h2 className="text-xl font-semibold mb-4">Latest News</h2>
+          <h2 className="text-xl font-semibold mb-4">Follower activity</h2>
           {latestNewsData.map((newsItem) => (
             <LatestNewsItem
               key={newsItem.id}
               title={newsItem.title}
               imageSrc={newsItem.imageSrc}
               comment={newsItem.comment}
+              link={newsItem.link} // Pass link prop
+              user={newsItem.user} // Pass user prop
             />
           ))}
         </div>
       </div>
 
-      {/* Toggle button */}
       <button
         onClick={togglePanel}
         className={`fixed p-2 bg-blue-600 text-white rounded-full focus:outline-none transition-transform duration-300 ease-in-out transform ${
