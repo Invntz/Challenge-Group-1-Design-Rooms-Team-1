@@ -1,3 +1,4 @@
+# coding setup created by Tony Hoong
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
@@ -8,9 +9,7 @@ from app.routers.feedRouter import router as feedRouter
 from app.routers.loginRouter import router as loginRouter
 from app.routers.newsRouter import router as newsRouter
 from app.routers.signUpRouter import router as signupRouter
-from app.routers.uploadsRouter import router as uploadsRouter
-from app.routers.userRouter import router as userRouter
-from app.routers.wardrobeRouter import router as wardrodeRouter
+from app.routers.teamRouter import router as teamRouter
 
 # needed to use FastAPI
 app = FastAPI()
@@ -26,7 +25,12 @@ app.add_middleware(
 )
 
 # Register the routers
-app.include_router(loginRouter, prefix="/api/login")
+
+# router added by Cara McCrossan
 app.include_router(signupRouter, prefix="/api/signup")
+# routers added by Tony Hoong
+app.include_router(loginRouter, prefix="/api/login")
 app.include_router(newsRouter, prefix="/api/news")
 app.include_router(feedRouter, prefix="/api/feed")
+app.include_router(loginRouter, prefix="/api/login")
+app.include_router(teamRouter, prefix="/api/team")

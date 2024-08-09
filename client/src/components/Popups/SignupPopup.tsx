@@ -1,10 +1,12 @@
-//modify by Min-Xuan
+//creat by Min-Xuan
 
-import React from 'react';
-import { zodResolver } from '@hookform/resolvers/zod';
-import { useForm } from 'react-hook-form';
+import { Link } from 'react-router-dom';
+import Popup, { PopupPropsWithoutChildren } from './Popup';
+import logo from '@/images/logo/invntz.png';
+import { userFormField } from '@/pages/Authentication/SignUp';
 import { z } from 'zod';
-import { Button } from '@/components/ui/button';
+import { useForm } from 'react-hook-form';
+import { zodResolver } from '@hookform/resolvers/zod';
 import {
   Form,
   FormControl,
@@ -14,16 +16,8 @@ import {
   FormLabel,
   FormMessage,
 } from '@/components/ui/form';
-import { Input } from '@/components/ui/input';
-import { Link, useNavigate } from 'react-router-dom';
-import logo from '@/images/logo/invntz.png';
-
-export type userFormField = {
-  name: string;
-  label: string;
-  type: string;
-  placeholder: string;
-};
+import { Input } from '../ui/input';
+import { Button } from '../ui/button';
 
 const formSchema = z
   .object({
@@ -78,8 +72,7 @@ const signFrom: userFormField[] = [
   },
 ];
 
-const SignUp: React.FC = () => {
-  const navigate = useNavigate();
+const SignupPopup = ({ isOpen, handleClose }: PopupPropsWithoutChildren) => {
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
   });
@@ -88,22 +81,16 @@ const SignUp: React.FC = () => {
     // Do something with the form values.
     // ✅ This will be type-safe and validated.
     console.log(values);
-    navigate('/');
+    localStorage.setItem('isLogin', '1');
+    handleClose();
   }
   return (
-    <>
-      <div className="rounded-sm min-h-screen bg-white shadow-default dark:bg-boxdark">
-        <div className="flex flex-col max-w-xl mx-auto w-full justify-center px-5 py-[calc(11vh_-_15px)]">
-          <p className="mr-0 ml-auto pr-4 mb-2 text-graydark/50 dark:text-white text-sm">
-            Already have an account?{' '}
-            <Link to="/auth/signin" className="text-blue-400">
-              Log In
-            </Link>
-          </p>
-          <div className="w-full rounded-xl border border-graydark/20 dark:border-white">
-            <div className="w-full p-4 sm:p-12.5 xl:p-17.5">
-              {/* <span className="mb-1.5 block font-medium">Start for free</span> */}
-              <h2 className="lg:mb-9 mb-5 text-2xl flex flex-wrap items-end justify-center gap-x-2 font-bold text-center text-black dark:text-white sm:text-title-xl2">
+    <Popup isOpen={isOpen} handleClose={handleClose}>
+      <div className="rounded-xl max-h-[90vh] overflow-y-auto bg-white shadow-default dark:bg-boxdark">
+        <div className="flex flex-col max-w-xl mx-auto w-full justify-center px-5 py-2">
+          <div className="w-full rounded-xl">
+            <div className="w-full px-4 py-2">
+              <h2 className="mb-5 text-2xl flex flex-wrap items-end justify-center gap-x-2 font-bold text-center text-black dark:text-white sm:text-title-xl2">
                 Sign Up with{' '}
                 <img src={logo} alt="logo" className="w-full max-w-32" />
               </h2>
@@ -143,12 +130,19 @@ const SignUp: React.FC = () => {
                   </Button>
                 </form>
               </Form>
+
+              <p className="mx-auto mt-5 text-graydark/50 dark:text-white text-sm text-center">
+                Already have an account?
+                <Link to="/auth/signin" className="text-blue-400 ml-2">
+                  Log In
+                </Link>
+              </p>
             </div>
           </div>
         </div>
       </div>
-    </>
+    </Popup>
   );
 };
 
-export default SignUp;
+export default SignupPopup;
