@@ -157,23 +157,6 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                   }`}
                 >
                   <FontAwesomeIcon
-                    icon={faChartPie}
-                    className="text-current fa-2x"
-                  />
-                  <span className="text-sm mt-1">Statics</span>{' '}
-                  {/* Added this line */}
-                </NavLink>
-              </li>
-
-              <li>
-                <NavLink
-                  to="/Statics"
-                  className={`mb-5 group relative flex flex-col items-center gap-2.5 rounded-sm py-2 px-4 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4 ${
-                    pathname.includes('calendar') &&
-                    'bg-graydark dark:bg-meta-4'
-                  }`}
-                >
-                  <FontAwesomeIcon
                     icon={faCloud}
                     className="text-current fa-2x"
                   />

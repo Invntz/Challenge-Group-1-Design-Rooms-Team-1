@@ -10,6 +10,7 @@ from app.utils.config import get_db, get_password_hash
 router = APIRouter()
 
 
+# Cara McCrossan completed this function
 @router.post("/")
 # signup is the request object that we receive. SignupBase is added as the type to validate the request
 def signup_post(signup: SignupBase):

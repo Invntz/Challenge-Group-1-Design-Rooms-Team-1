@@ -47,6 +47,10 @@ http://127.0.0.1:8000/docs
 http://127.0.0.1:8000/api/news
 http://127.0.0.1:8000/api/feed
 http://127.0.0.1:8000/api/team
+http://127.0.0.1:8000/api/followerfeed
+http://127.0.0.1:8000/api/landingPage/sidenav
+http://127.0.0.1:8000/api/landingPage/productCategories
+http://127.0.0.1:8000/api/landingPage/products
 
 ##### Tools and technologies used:
 
