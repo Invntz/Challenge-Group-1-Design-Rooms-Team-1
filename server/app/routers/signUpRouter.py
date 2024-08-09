@@ -1,3 +1,6 @@
+# coding completed by Cara McCrossan
+# coding structure and setup by Tony Hoong
+
 from fastapi import APIRouter, HTTPException
 
 from app.schemas.signUpSchema import Signup, SignupBase
@@ -18,6 +21,7 @@ def signup_post(signup: SignupBase):
         "INSERT INTO user (email, password, firstname, surname) VALUES (?, ?, ?, ?)",
         (
             signup.email,
+            # Tony Hoong added the hashing function
             get_password_hash(signup.password),
             signup.firstname,
             signup.surname,
