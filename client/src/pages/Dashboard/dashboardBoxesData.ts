@@ -1,92 +1,70 @@
-// Created by erikas ramanauskas
+// Created by Erikas ramanauskas
 
 // Controls dashbord boxes data
 
-import image1 from '../../images/cards/cards-01.png';
-import image2 from '../../images/cards/cards-02.png';
-import image3 from '../../images/cards/cards-03.png';
-import image4 from '../../images/cards/cards-04.png';
-import image5 from '../../images/cards/cards-05.png';
+import womensImage from '../../images/dashboard/womens.png';
+import mensImage from '../../images/dashboard/mens.png';
+import accessoriesImage from '../../images/dashboard/accessories.png';
+import makeupImage from '../../images/dashboard/makeup_beauty.png';
+import shoesImage from '../../images/dashboard/shoes.png';
+import kidsImage from '../../images/dashboard/kids.png';
 
 interface DashboardBoxData {
   id: number;
   title: string;
   content: string;
   backgroundImage: string;
+  link: string;
 }
 
 const dashboardBoxesData: DashboardBoxData[] = [
   {
     id: 1,
-    title: 'Box 1',
-    content: 'This is box 1',
-    backgroundImage: image1,
+    title: "Women's Clothing",
+    content:
+      'Discover the latest trends in women’s fashion, from casual wear to evening dresses.',
+    backgroundImage: womensImage,
+    link: '/calendar',
   },
   {
     id: 2,
-    title: 'Box 2',
-    content: 'This is box 2',
-    backgroundImage: image2,
+    title: "Men's Clothing",
+    content:
+      'Explore a wide range of styles in men’s fashion, including suits, casual, and sportswear.',
+    backgroundImage: mensImage,
+    link: '/',
   },
   {
     id: 3,
-    title: 'Box 3',
-    content: 'This is box 3',
-    backgroundImage: image3,
+    title: 'Accessories',
+    content:
+      'Elevate your outfit with our collection of accessories, from jewelry to handbags.',
+    backgroundImage: accessoriesImage,
+    link: '/',
   },
   {
     id: 4,
-    title: 'Box 4',
-    content: 'This is box 4',
-    backgroundImage: image4,
+    title: 'Makeup & Beauty',
+    content:
+      'Find top beauty products and makeup essentials for a flawless look.',
+    backgroundImage: makeupImage,
+    link: '/',
   },
   {
     id: 5,
-    title: 'Box 5',
-    content: 'This is box 5',
-    backgroundImage: image5,
+    title: 'Shoes',
+    content:
+      'Step up your style with our diverse selection of shoes for every occasion.',
+    backgroundImage: shoesImage,
+    link: '/',
   },
   {
     id: 6,
-    title: 'Box 6',
-    content: 'This is box 6',
-    backgroundImage: image1,
-  },
-  {
-    id: 7,
-    title: 'Box 7',
-    content: 'This is box 7',
-    backgroundImage: image2,
-  },
-  {
-    id: 8,
-    title: 'Box 8',
-    content: 'This is box 8',
-    backgroundImage: image3,
-  },
-  {
-    id: 9,
-    title: 'Box 9',
-    content: 'This is box 9',
-    backgroundImage: image4,
-  },
-  {
-    id: 10,
-    title: 'Box 10',
-    content: 'This is box 10',
-    backgroundImage: image5,
-  },
-  {
-    id: 11,
-    title: 'Box 11',
-    content: 'This is box 11',
-    backgroundImage: image4,
-  },
-  {
-    id: 12,
-    title: 'Box 12',
-    content: 'This is box 12',
-    backgroundImage: image5,
+    title: 'Kids Clothes',
+    content:
+      'Shop the latest in kids’ fashion, from everyday essentials to special occasion outfits.',
+    backgroundImage: kidsImage,
+    link: '/',
   },
 ];
 
