@@ -51,11 +51,11 @@ type cardProps = {
 const Card = ({ img, desc, reverse }: cardProps) => (
   <section
     className={`${
-      reverse ? 'bg-graydark/10 flex-row-reverse' : 'bg-white'
-    } w-full p-5 h-auto flex`}
+      reverse ? 'bg-graydark/10 md:flex-row-reverse' : 'bg-white md:flex-row'
+    } w-full p-5 h-auto flex flex-col`}
   >
     <div
-      className="w-full aspect-[1/0.5] rounded-lg bg-no-repeat bg-cover bg-center"
+      className="flex-[0_0_40%] md:max-w-[600px] w-full aspect-[2/1.25] h-fit rounded-lg bg-no-repeat bg-cover bg-center"
       style={{ backgroundImage: `url("${img}")` }}
     ></div>
     <p
