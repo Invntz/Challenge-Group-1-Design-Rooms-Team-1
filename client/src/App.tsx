@@ -7,10 +7,10 @@ import Loader from './common/Loader';
 import PageTitle from './components/PageTitle';
 import SignIn from './pages/Authentication/SignIn';
 import SignUp from './pages/Authentication/SignUp';
-import Calendar from './pages/Calendar';
-import Chart from './pages/Chart';
+
+
 import ECommerce from './pages/Dashboard/Dashboard';
-import FormElements from './pages/Form/FormElements';
+
 import FormLayout from './pages/Form/FormLayout';
 import Profile from './pages/Profile';
 import Settings from './pages/Settings';
@@ -74,7 +74,7 @@ function App() {
             element={
               <>
                 <PageTitle title="Calendar | TailAdmin - Tailwind CSS Admin Dashboard Template" />
-                <Calendar />
+             
               </>
             }
           />
@@ -92,7 +92,7 @@ function App() {
             element={
               <>
                 <PageTitle title="Form Elements | TailAdmin - Tailwind CSS Admin Dashboard Template" />
-                <FormElements />
+              
               </>
             }
           />
@@ -128,7 +128,7 @@ function App() {
             element={
               <>
                 <PageTitle title="Basic Chart | TailAdmin - Tailwind CSS Admin Dashboard Template" />
-                <Chart />
+                
               </>
             }
           />
