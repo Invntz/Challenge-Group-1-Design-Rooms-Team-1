@@ -1,6 +1,6 @@
 //creat by Min-Xuan
 
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import Popup, { PopupPropsWithoutChildren } from './Popup';
 import logo from '@/images/logo/invntz.png';
 import { userFormField } from '@/pages/Authentication/SignUp';
@@ -18,6 +18,7 @@ import {
 } from '@/components/ui/form';
 import { Input } from '../ui/input';
 import { Button } from '../ui/button';
+import { useEffect } from 'react';
 
 type SignupPopupProps = PopupPropsWithoutChildren & {
   setLogin: React.Dispatch<React.SetStateAction<boolean>>;
@@ -82,12 +83,19 @@ const SignupPopup = ({ isOpen, handleClose, setLogin }: SignupPopupProps) => {
     resolver: zodResolver(formSchema),
   });
 
+  useEffect(() => {
+    if (!isOpen) {
+      form.reset();
+    }
+  }, [isOpen]);
+
   function onSubmit(values: z.infer<typeof formSchema>) {
     // Do something with the form values.
     // ✅ This will be type-safe and validated.
     console.log(values);
     navigate('/');
   }
+
   return (
     <Popup isOpen={isOpen} handleClose={handleClose}>
       <div className="rounded-xl max-h-[90vh] overflow-y-auto bg-white shadow-default dark:bg-boxdark">

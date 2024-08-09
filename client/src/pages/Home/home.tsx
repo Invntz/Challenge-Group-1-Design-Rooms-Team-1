@@ -3,7 +3,6 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Logo from '../../images/logo/InvntzLogo.png';
 import HomeImage from '../../images/HomeImage/HomeImage.png';
-// import { Button } from '@/components/ui/button';
 import SignupPopup from '@/components/Popups/SignupPopup';
 import LoginPopup from '@/components/Popups/LoginPopup';
 import Marquee from 'react-fast-marquee';
@@ -52,14 +51,17 @@ type cardProps = {
 const Card = ({ img, desc, reverse }: cardProps) => (
   <section
     className={`${
-      reverse ? 'bg-graydark/10' : 'bg-white'
-    } w-full p-5 grid h-auto grid-cols-2`}
+      reverse ? 'bg-graydark/10 flex-row-reverse' : 'bg-white'
+    } w-full p-5 h-auto flex`}
   >
     <div
       className="w-full aspect-[1/0.5] rounded-lg bg-no-repeat bg-cover bg-center"
       style={{ backgroundImage: `url("${img}")` }}
     ></div>
-    <p className="px-6 py-5 flex items-center text-lg">{desc}</p>
+    <p
+      className="px-6 py-5 flex items-center text-lg"
+      dangerouslySetInnerHTML={{ __html: desc }}
+    ></p>
   </section>
 );
 
@@ -136,6 +138,7 @@ const LandingPage: React.FC = () => {
         desc="By using renewable, biodegradable materials, the service helps reduce the fashion industry's reliance on petrochemicals and animal products, which are major sources of pollution and environmental degradation."
         reverse={false}
       />
+
       <section className="flex justify-start w-full">
         <section className="flex flex-col items-start space-y-4 bg-gray-100 p-8">
           {/* Button 1 */}
@@ -164,6 +167,12 @@ const LandingPage: React.FC = () => {
           </button>
         </section>
       </section>
+
+      <Card
+        img={card1}
+        desc="Launch & Scale your         e-commerce brand.      Join forces and collaborate with 1000+ creators, brands, scientists and bio-manufacturers."
+        reverse={true}
+      />
 
       <footer className="w-full p-6 mt-10 text-center text-gray-600 dark:text-gray-400">
         © 2024 Fashion Brand. All rights reserved.
