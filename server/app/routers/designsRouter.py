@@ -1,6 +1,6 @@
 from fastapi import APIRouter, HTTPException
 
-from app.schemas.signUpSchema import Signup, SignupBase
+# from app.schemas.
 from app.utils.config import get_db
 
 router = APIRouter()
@@ -54,17 +54,31 @@ def delete_collaborator():
     return
 
 
-#
+# post route to add comments to designs
 @router.post("/{id}/comments")
 def post_design_comments():
     return
 
 
+# fetch comments for specific design
 @router.get("/{id}/comments")
 def get_design_comments():
     return
 
 
+# resume work on a design
 @router.post("/{id}/resume")
 def post_resume_design():
+    return
+
+
+# set images for the design room
+@router.post("/{id}/images")
+def post_image_design():
+    return
+
+
+# get images for the design room
+@router.get("/{id}/images")
+def get_image_design():
     return
