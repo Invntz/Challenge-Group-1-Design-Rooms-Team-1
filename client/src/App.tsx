@@ -22,6 +22,7 @@ import Buttons from './pages/UiElements/Buttons';
 import DefaultLayout from './layout/DefaultLayout';
 // import Home from './pages/Home/home';
 import StatisticsPage from './components/Pages/statics';
+import Upload from './components/Pages/upload';
 
 function App() {
   const [loading, setLoading] = useState<boolean>(true);
@@ -74,9 +75,19 @@ function App() {
           }
         />
 
+        <Route
+          path="/"
+          element={
+            <>
+              <PageTitle title="Signup   " />
+              <SignIn />
+            </>
+          }
+        />
+
         {/* Routes with Default Layout */}
         <Route element={<DefaultLayout />}>
-        <Route
+          {/* <Route
           path="/"
             index
             element={
@@ -85,9 +96,9 @@ function App() {
                 <ECommerce />
               </>
             }
-          />
+          /> */}
           <Route
-          path="/dashboard"
+            path="/dashboard"
             index
             element={
               <>
@@ -96,6 +107,7 @@ function App() {
               </>
             }
           />
+          
           <Route
             path="/home"
             element={
@@ -114,6 +126,15 @@ function App() {
               </>
             }
           />
+           <Route
+          path="/upload"
+          element={
+            <>
+              <PageTitle title="Signup   " />
+              <Upload />
+            </>
+          }
+        />
           <Route
             path="/forms/form-elements"
             element={
