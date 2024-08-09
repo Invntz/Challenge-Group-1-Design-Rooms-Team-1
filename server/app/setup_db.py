@@ -18,6 +18,19 @@ CREATE TABLE IF NOT EXISTS user (
 """
 )
 
+# news table creation
+cursor.execute(
+    """
+CREATE TABLE IF NOT EXISTS news (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    title VARCHAR(255) NOT NULL,
+    content TEXT NOT NULL,
+    firstname VARCHAR(30) NOT NULL,
+    surname VARCHAR(30) NOT NULL
+)
+"""
+)
+
 # save any executed commands
 connection.commit()
 # close the database connection
