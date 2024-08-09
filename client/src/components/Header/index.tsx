@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 // import DropdownNotification from './DropdownNotification';
 import DropdownUser from './DropdownUser';
 import LogoIcon from '../../images/logo/Invntz Black logo.png';
-// import DarkModeSwitcher from './DarkModeSwitcher';
+import DarkModeSwitcher from './DarkModeSwitcher';
 
 const Header = (props: {
   sidebarOpen: string | boolean | undefined;
@@ -21,7 +21,7 @@ const Header = (props: {
       <div className="flex flex-grow items-center justify-between px-4 py-4  md:px-6 2xl:px-11">
         <div className="flex items-center gap-2 sm:gap-4 ">
           {/* <!-- Hamburger Toggle BTN --> */}
-
+          <DarkModeSwitcher />
           <button
             aria-controls="sidebar"
             onClick={(e) => {
