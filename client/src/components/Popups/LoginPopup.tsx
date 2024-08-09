@@ -1,6 +1,6 @@
 //creat by Min-Xuan
 
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import Popup, { PopupPropsWithoutChildren } from './Popup';
 import logo from '@/images/logo/invntz.png';
 import { userFormField } from '@/pages/Authentication/SignUp';
@@ -16,6 +16,11 @@ import {
 } from '@/components/ui/form';
 import { Input } from '../ui/input';
 import { Button } from '../ui/button';
+import { useEffect } from 'react';
+
+type SignupPopupProps = PopupPropsWithoutChildren & {
+  setSignup: React.Dispatch<React.SetStateAction<boolean>>;
+};
 
 const formSchema = z.object({
   email: z
@@ -39,17 +44,23 @@ const signInForm: userFormField[] = [
   },
 ];
 
-const LoginPopup = ({ isOpen, handleClose }: PopupPropsWithoutChildren) => {
+const LoginPopup = ({ isOpen, handleClose, setSignup }: SignupPopupProps) => {
+  const navigate = useNavigate();
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
   });
+
+  useEffect(() => {
+    if (!isOpen) {
+      form.reset();
+    }
+  }, [isOpen]);
 
   function onSubmit(values: z.infer<typeof formSchema>) {
     // Do something with the form values.
     // ✅ This will be type-safe and validated.
     console.log(values);
-    localStorage.setItem('isLogin', '1');
-    handleClose();
+    navigate('/');
   }
   return (
     <Popup isOpen={isOpen} handleClose={handleClose}>
@@ -95,9 +106,15 @@ const LoginPopup = ({ isOpen, handleClose }: PopupPropsWithoutChildren) => {
 
               <p className="mx-auto mt-10 mb-20 text-graydark/50 dark:text-white text-sm text-center">
                 Not an Invtz member yet?
-                <Link to="/auth/signup" className="text-blue-400 ml-2">
+                <button
+                  className="text-blue-400 ml-2"
+                  onClick={() => {
+                    handleClose();
+                    setSignup(true);
+                  }}
+                >
                   Sign Up
-                </Link>
+                </button>
               </p>
 
               <div className="relative h-10 flex items-center">
