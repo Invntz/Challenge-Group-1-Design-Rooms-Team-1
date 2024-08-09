@@ -12,6 +12,11 @@ import brand2 from '@/images/brand/patagonia.png';
 import brand3 from '@/images/brand/vivwestwood.jpg';
 import brand4 from '@/images/brand/pangaia.png';
 import brand5 from '@/images/brand/girlfriendcollectivelogo.png';
+import icon1 from '@/images/icon/icon-homepage/icon1.png';
+import icon2 from '@/images/icon/icon-homepage/icon2.png';
+import icon3 from '@/images/icon/icon-homepage/icon3.png';
+import icon4 from '@/images/icon/icon-homepage/icon4.png';
+import icon5 from '@/images/icon/icon-homepage/icon5.png';
 
 import card1 from '@/images/HomeImage/image1.png';
 
@@ -131,6 +136,34 @@ const LandingPage: React.FC = () => {
         desc="By using renewable, biodegradable materials, the service helps reduce the fashion industry's reliance on petrochemicals and animal products, which are major sources of pollution and environmental degradation."
         reverse={false}
       />
+      <section className="flex justify-start w-full">
+        <section className="flex flex-col items-start space-y-4 bg-gray-100 p-8">
+          {/* Button 1 */}
+          <button className="flex items-center justify-center w-12 h-12 bg-gray-200 rounded-full hover:bg-gray-300">
+            <img src={icon1} alt="Icon 1" className="w-6 h-6" />
+          </button>
+
+          {/* Button 2 */}
+          <button className="flex items-center justify-center w-12 h-12 bg-gray-200 rounded-full hover:bg-gray-300">
+            <img src={icon2} alt="Icon 2" className="w-6 h-6" />
+          </button>
+
+          {/* Button 3 */}
+          <button className="flex items-center justify-center w-12 h-12 bg-gray-200 rounded-full hover:bg-gray-300">
+            <img src={icon3} alt="Icon 3" className="w-6 h-6" />
+          </button>
+
+          {/* Button 4 */}
+          <button className="flex items-center justify-center w-12 h-12 bg-gray-200 rounded-full hover:bg-gray-300">
+            <img src={icon4} alt="Icon 4" className="w-6 h-6" />
+          </button>
+
+          {/* Button 5 */}
+          <button className="flex items-center justify-center w-12 h-12 bg-gray-200 rounded-full hover:bg-gray-300">
+            <img src={icon5} alt="Icon 5" className="w-6 h-6" />
+          </button>
+        </section>
+      </section>
 
       <footer className="w-full p-6 mt-10 text-center text-gray-600 dark:text-gray-400">
         © 2024 Fashion Brand. All rights reserved.
