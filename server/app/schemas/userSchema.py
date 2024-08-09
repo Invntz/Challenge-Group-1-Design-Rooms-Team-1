@@ -2,7 +2,7 @@ from pydantic import BaseModel
 
 
 # this model is used to validate and parse incoming request data for a sign up
-class SignupBase(BaseModel):
+class UserBase(BaseModel):
     email: str
     password: str
     firstname: str
@@ -10,8 +10,5 @@ class SignupBase(BaseModel):
 
 
 # this model extends the above model and adds any extra fields like primary keys and foreign keys
-class Signup(SignupBase):
+class User(UserBase):
     id: int
-
-    class Config:
-        orm_mode = True
