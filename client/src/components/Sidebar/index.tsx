@@ -5,23 +5,7 @@ import Logo from '../../images/logo/InvntzLogo.png';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-<<<<<<< HEAD
-import {
-  faHome,
-  faBeer,
-  faComments,
-  faBars,
-  faPlus,
-  faTable,
-  faCog,
-  faChartBar,
-  faTachometerAlt,
-  faChartPie,
-  faCloud,
-} from '@fortawesome/free-solid-svg-icons';
-=======
 import { faHome, faBeer, faComments, faBars, faPlus, faTable, faCog, faChartBar, faTachometerAlt, faChartPie, faCloud, faShoppingCart, faStore } from '@fortawesome/free-solid-svg-icons';
->>>>>>> 4300c83a0c108e8335c236edeb895e69a28faad7
 
 interface SidebarProps {
   sidebarOpen: boolean;
