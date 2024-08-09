@@ -1,39 +1,36 @@
-import React, { useState } from 'react';
+// Created by Ajithsan
+// Edited by Erikas Ramanauskas
 
-const ImageUpload = ({ onUpload }: { onUpload: (image: File) => void }) => {
-  const [selectedImage, setSelectedImage] = useState<File | null>(null);
+import React, { useRef } from 'react';
 
-  const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    if (e.target.files && e.target.files.length > 0) {
-      setSelectedImage(e.target.files[0]);
-    }
-  };
+interface ImageUploadProps {
+  onUpload: (image: File) => void;
+}
 
-  const handleUpload = () => {
-    if (selectedImage) {
-      onUpload(selectedImage);
-      setSelectedImage(null);
+const ImageUpload: React.FC<ImageUploadProps> = ({ onUpload }) => {
+  const fileInputRef = useRef<HTMLInputElement>(null);
+
+  const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    if (event.target.files && event.target.files.length > 0) {
+      onUpload(event.target.files[0]);
     }
   };
 
   return (
-    <div className="p-4">
-      <input type="file" accept="image/*" onChange={handleImageChange} />
-      {selectedImage && (
-        <div className="mt-4">
-          <img
-            src={URL.createObjectURL(selectedImage)}
-            alt="Preview"
-            className="w-32 h-32 object-cover"
-          />
-          <button
-            onClick={handleUpload}
-            className="mt-2 px-4 py-2 bg-blue-500 text-white rounded"
-          >
-            Upload
-          </button>
-        </div>
-      )}
+    <div className="border-dashed border-4 border-gray-300 rounded-lg p-4 text-center">
+      <input
+        ref={fileInputRef}
+        type="file"
+        accept="image/*"
+        className="hidden"
+        onChange={handleFileChange}
+      />
+      <button
+        className="bg-primary text-white px-4 py-2 rounded"
+        onClick={() => fileInputRef.current?.click()}
+      >
+        Upload Image
+      </button>
     </div>
   );
 };
