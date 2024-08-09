@@ -1,6 +1,6 @@
 //creat by Min-Xuan
 
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Popup, { PopupPropsWithoutChildren } from './Popup';
 import logo from '@/images/logo/invntz.png';
 import { userFormField } from '@/pages/Authentication/SignUp';
@@ -40,6 +40,7 @@ const signInForm: userFormField[] = [
 ];
 
 const LoginPopup = ({ isOpen, handleClose }: PopupPropsWithoutChildren) => {
+  const navigate = useNavigate();
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
   });
@@ -48,8 +49,7 @@ const LoginPopup = ({ isOpen, handleClose }: PopupPropsWithoutChildren) => {
     // Do something with the form values.
     // ✅ This will be type-safe and validated.
     console.log(values);
-    localStorage.setItem('isLogin', '1');
-    handleClose();
+    navigate('/');
   }
   return (
     <Popup isOpen={isOpen} handleClose={handleClose}>
