@@ -1,4 +1,4 @@
-//Ajithan
+//Cara and Konstantinos
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Logo from '../../images/logo/InvntzLogo.png';
@@ -10,8 +10,8 @@ const LandingPage: React.FC = () => {
     <div className="min-h-screen bg-gray-100 dark:bg-gray-900 flex flex-col items-center justify-center">
       <header className="w-full p-6 flex justify-between items-center">
         <img src={Logo} alt="Fashion Brand Logo" className="h-14" />
-        <nav className="flex space-between">
-          <div className="flex-1 flex">
+        <nav className="flex space-between flex-1 max-w-[65%]">
+          <div className="flex w-full justify-between">
             <ul className="flex space-x-8 text-lg font-medium text-gray-800 dark:text-gray-200">
               <li>
                 <Link to="/collections" className="hover:text-gray-500">
