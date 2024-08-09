@@ -76,6 +76,18 @@ const dashboardBoxesData: DashboardBoxData[] = [
     content: 'This is box 10',
     backgroundImage: image5,
   },
+  {
+    id: 11,
+    title: 'Box 11',
+    content: 'This is box 11',
+    backgroundImage: image4,
+  },
+  {
+    id: 12,
+    title: 'Box 12',
+    content: 'This is box 12',
+    backgroundImage: image5,
+  },
 ];
 
 export default dashboardBoxesData;
