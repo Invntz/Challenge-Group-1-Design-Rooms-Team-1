@@ -4,9 +4,9 @@
 const latestNewsData = [
   {
     id: 1,
-    title: 'Person shared their design',
+    title: 'Anton shared their design',
     imageSrc: 'https://picsum.photos/200/300',
-    comment: 'This is a brief comment about the shared design.',
+    comment: 'A cool new sneaker I sketched up.',
     link: 'https://example.com/design',
     user: {
       name: 'John Doe',
@@ -16,9 +16,9 @@ const latestNewsData = [
   },
   {
     id: 2,
-    title: 'New feature released',
+    title: "Erikas re-shared Michelle's design",
     imageSrc: 'https://picsum.photos/200/300',
-    comment: 'Check out the new feature we just released!',
+    comment: 'Checkout this sustainable leather jacket I just designed!',
     link: 'https://example.com/feature',
     user: {
       name: 'Jane Smith',
@@ -28,9 +28,9 @@ const latestNewsData = [
   },
   {
     id: 3,
-    title: 'Update on project',
+    title: 'Afra shared their design',
     imageSrc: 'https://picsum.photos/200/300',
-    comment: 'Here is the latest update on our ongoing project.',
+    comment: 'I just created my first design on Invntz!',
     link: 'https://example.com/project',
     user: {
       name: 'Bob Johnson',
