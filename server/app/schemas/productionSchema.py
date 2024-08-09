@@ -2,16 +2,10 @@ from pydantic import BaseModel
 
 
 # this model is used to validate and parse incoming request data for a sign up
-class SignupBase(BaseModel):
-    email: str
-    password: str
-    firstname: str
-    surname: str
+class ProductionBase(BaseModel):
+    # insert table types
 
 
 # this model extends the above model and adds any extra fields like primary keys and foreign keys
-class Signup(SignupBase):
+class Production(ProductionBase):
     id: int
-
-    class Config:
-        orm_mode = True
