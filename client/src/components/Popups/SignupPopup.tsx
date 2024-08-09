@@ -19,6 +19,10 @@ import {
 import { Input } from '../ui/input';
 import { Button } from '../ui/button';
 
+type SignupPopupProps = PopupPropsWithoutChildren & {
+  setLogin: React.Dispatch<React.SetStateAction<boolean>>;
+};
+
 const formSchema = z
   .object({
     email: z
@@ -72,7 +76,7 @@ const signFrom: userFormField[] = [
   },
 ];
 
-const SignupPopup = ({ isOpen, handleClose }: PopupPropsWithoutChildren) => {
+const SignupPopup = ({ isOpen, handleClose, setLogin }: SignupPopupProps) => {
   const navigate = useNavigate();
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -133,9 +137,15 @@ const SignupPopup = ({ isOpen, handleClose }: PopupPropsWithoutChildren) => {
 
               <p className="mx-auto mt-5 text-graydark/50 dark:text-white text-sm text-center">
                 Already have an account?
-                <Link to="/auth/signin" className="text-blue-400 ml-2">
+                <button
+                  className="text-blue-400 ml-2"
+                  onClick={() => {
+                    handleClose();
+                    setLogin(true);
+                  }}
+                >
                   Log In
-                </Link>
+                </button>
               </p>
             </div>
           </div>

@@ -17,6 +17,10 @@ import {
 import { Input } from '../ui/input';
 import { Button } from '../ui/button';
 
+type SignupPopupProps = PopupPropsWithoutChildren & {
+  setSignup: React.Dispatch<React.SetStateAction<boolean>>;
+};
+
 const formSchema = z.object({
   email: z
     .string({ required_error: 'Email is required' })
@@ -39,7 +43,7 @@ const signInForm: userFormField[] = [
   },
 ];
 
-const LoginPopup = ({ isOpen, handleClose }: PopupPropsWithoutChildren) => {
+const LoginPopup = ({ isOpen, handleClose, setSignup }: SignupPopupProps) => {
   const navigate = useNavigate();
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -95,9 +99,15 @@ const LoginPopup = ({ isOpen, handleClose }: PopupPropsWithoutChildren) => {
 
               <p className="mx-auto mt-10 mb-20 text-graydark/50 dark:text-white text-sm text-center">
                 Not an Invtz member yet?
-                <Link to="/auth/signup" className="text-blue-400 ml-2">
+                <button
+                  className="text-blue-400 ml-2"
+                  onClick={() => {
+                    handleClose();
+                    setSignup(true);
+                  }}
+                >
                   Sign Up
-                </Link>
+                </button>
               </p>
 
               <div className="relative h-10 flex items-center">

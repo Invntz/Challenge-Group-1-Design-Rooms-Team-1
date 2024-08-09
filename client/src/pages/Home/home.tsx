@@ -13,6 +13,8 @@ import brand3 from '@/images/brand/vivwestwood.jpg';
 import brand4 from '@/images/brand/pangaia.png';
 import brand5 from '@/images/brand/girlfriendcollectivelogo.png';
 
+import card1 from '@/images/HomeImage/image1.png';
+
 const brands = [
   {
     name: 'stellamccartney',
@@ -35,6 +37,26 @@ const brands = [
     img: brand5,
   },
 ];
+
+type cardProps = {
+  img: string;
+  desc: string;
+  reverse: boolean;
+};
+
+const Card = ({ img, desc, reverse }: cardProps) => (
+  <section
+    className={`${
+      reverse ? 'bg-graydark/10' : 'bg-white'
+    } w-full p-5 grid h-auto grid-cols-2`}
+  >
+    <div
+      className="w-full aspect-[1/0.5] rounded-lg bg-no-repeat bg-cover bg-center"
+      style={{ backgroundImage: `url("${img}")` }}
+    ></div>
+    <p className="px-6 py-5 flex items-center text-lg">{desc}</p>
+  </section>
+);
 
 const LandingPage: React.FC = () => {
   const [signup, setSignup] = useState(false);
@@ -104,16 +126,24 @@ const LandingPage: React.FC = () => {
         </Marquee>
       </section>
 
+      <Card
+        img={card1}
+        desc="By using renewable, biodegradable materials, the service helps reduce the fashion industry's reliance on petrochemicals and animal products, which are major sources of pollution and environmental degradation."
+        reverse={false}
+      />
+
       <footer className="w-full p-6 mt-10 text-center text-gray-600 dark:text-gray-400">
         © 2024 Fashion Brand. All rights reserved.
       </footer>
       <LoginPopup
         isOpen={login}
         handleClose={() => setLogin(!login)}
+        setSignup={setSignup}
       ></LoginPopup>
       <SignupPopup
         isOpen={signup}
         handleClose={() => setSignup(!signup)}
+        setLogin={setLogin}
       ></SignupPopup>
     </div>
   );
