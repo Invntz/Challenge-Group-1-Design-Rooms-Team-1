@@ -1,12 +1,12 @@
-# FastAPI backend
+# Invntz Challenge Group 1, Team 1. FastAPI backend
 
-Description goes here
+We have created a Python backend using the FastAPI library with Sqlite as the database for this challenge. Sqlite is just for the prototype stage and would have to be replaced in the future with an ORM package like SQLAlchemy which can use MySQL or PostgreSQL. I have chosen not to use SQLAlchemy as despite it being capable of using Sqlite, we're unfamiliar with the ORM method of querying.
 
 <hr>
 
 #### Install:
 
-To run this project on your locally, first clone the repo and enter the folder in your terminal. Now setup a VENV with the command:
+To run this project locally, first clone the repo and enter the folder in your terminal. Now setup a Virtual Environment (VENV) with the command:
 
 ```
 python -m venv venv
@@ -44,8 +44,4 @@ http://127.0.0.1:8000/docs
 
 -   Python
 -   FastAPI
--   SQLAlchemy
-
-```
-
-```
+-   Sqlite3

@@ -1,8 +1,11 @@
 import sqlite3
 
+# establish sqlite connection
 connection = sqlite3.connect("sql_app.db")
+# database object to interactive with the database
 cursor = connection.cursor()
 
+# user table creation
 cursor.execute(
     """
 CREATE TABLE IF NOT EXISTS user (
@@ -15,6 +18,7 @@ CREATE TABLE IF NOT EXISTS user (
 """
 )
 
-
+# save any executed commands
 connection.commit()
+# close the database connection
 connection.close()
