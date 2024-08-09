@@ -1,3 +1,4 @@
+# file created and setup by Tony Hoong
 import sqlite3
 
 # establish sqlite connection
@@ -111,7 +112,7 @@ CREATE TABLE IF NOT EXISTS "transaction"(
 );
 """
 
-
+# execute the above sql script
 cursor.executescript(sqlqueries)
 # save any executed commands
 connection.commit()

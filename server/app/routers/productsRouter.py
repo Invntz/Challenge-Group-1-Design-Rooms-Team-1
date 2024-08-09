@@ -1,4 +1,7 @@
+# file created and coded by Tony Hoong
 from fastapi import APIRouter, HTTPException
+
+from app.tempData import product_feed
 
 # from app.schemas.
 from app.utils.config import get_db
@@ -7,9 +10,9 @@ router = APIRouter()
 
 
 # fetch a single user
-@router.get("/{id}")
-def get_user(id: int):
-    return
+@router.get("/")
+def get_products():
+    return {"success": True, "product_feed": product_feed}
 
 
 # update a single user

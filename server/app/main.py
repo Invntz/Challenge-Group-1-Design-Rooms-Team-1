@@ -1,13 +1,13 @@
-# coding setup created by Tony Hoong
+# file created, and coding setup created by Tony Hoong
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-from app.routers.designsRouter import router as designsRouter
 from app.routers.feedRouter import router as feedRouter
+from app.routers.followerFeedRouter import router as followerFeedRouter
+from app.routers.landingPageRouter import router as landingPageRouter
 
 # import the routers. rename them to avoid name conflicts
 from app.routers.loginRouter import router as loginRouter
-from app.routers.newsRouter import router as newsRouter
 from app.routers.signUpRouter import router as signupRouter
 from app.routers.teamRouter import router as teamRouter
 
@@ -30,7 +30,8 @@ app.add_middleware(
 app.include_router(signupRouter, prefix="/api/signup")
 # routers added by Tony Hoong
 app.include_router(loginRouter, prefix="/api/login")
-app.include_router(newsRouter, prefix="/api/news")
 app.include_router(feedRouter, prefix="/api/feed")
 app.include_router(loginRouter, prefix="/api/login")
 app.include_router(teamRouter, prefix="/api/team")
+app.include_router(followerFeedRouter, prefix="/api/followerFeed")
+app.include_router(landingPageRouter, prefix="/api/landingPage")
