@@ -2,11 +2,12 @@
 
 // Controls dashbord boxes data
 
-import image1 from '../../images/cards/cards-01.png';
-import image2 from '../../images/cards/cards-02.png';
-import image3 from '../../images/cards/cards-03.png';
-import image4 from '../../images/cards/cards-04.png';
-import image5 from '../../images/cards/cards-05.png';
+import womensImage from '../../images/dashboard/womens.png';
+import mensImage from '../../images/dashboard/mens.png';
+import accessoriesImage from '../../images/dashboard/accessories.png';
+import makeupImage from '../../images/dashboard/makeup_beauty.png';
+import shoesImage from '../../images/dashboard/shoes.png';
+import kidsImage from '../../images/dashboard/kids.png';
 
 interface DashboardBoxData {
   id: number;
@@ -22,7 +23,7 @@ const dashboardBoxesData: DashboardBoxData[] = [
     title: "Women's Clothing",
     content:
       'Discover the latest trends in women’s fashion, from casual wear to evening dresses.',
-    backgroundImage: image1,
+    backgroundImage: womensImage,
     link: '/calendar',
   },
   {
@@ -30,7 +31,7 @@ const dashboardBoxesData: DashboardBoxData[] = [
     title: "Men's Clothing",
     content:
       'Explore a wide range of styles in men’s fashion, including suits, casual, and sportswear.',
-    backgroundImage: image2,
+    backgroundImage: mensImage,
     link: '/',
   },
   {
@@ -38,7 +39,7 @@ const dashboardBoxesData: DashboardBoxData[] = [
     title: 'Accessories',
     content:
       'Elevate your outfit with our collection of accessories, from jewelry to handbags.',
-    backgroundImage: image3,
+    backgroundImage: accessoriesImage,
     link: '/',
   },
   {
@@ -46,7 +47,7 @@ const dashboardBoxesData: DashboardBoxData[] = [
     title: 'Makeup & Beauty',
     content:
       'Find top beauty products and makeup essentials for a flawless look.',
-    backgroundImage: image4,
+    backgroundImage: makeupImage,
     link: '/',
   },
   {
@@ -54,7 +55,7 @@ const dashboardBoxesData: DashboardBoxData[] = [
     title: 'Shoes',
     content:
       'Step up your style with our diverse selection of shoes for every occasion.',
-    backgroundImage: image5,
+    backgroundImage: shoesImage,
     link: '/',
   },
   {
@@ -62,7 +63,7 @@ const dashboardBoxesData: DashboardBoxData[] = [
     title: 'Kids Clothes',
     content:
       'Shop the latest in kids’ fashion, from everyday essentials to special occasion outfits.',
-    backgroundImage: image1,
+    backgroundImage: kidsImage,
     link: '/',
   },
 ];
